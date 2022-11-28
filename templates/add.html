@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            add new employee
+        </title>
+    </head>
+    <body>
+        {% for category ,message in get_flashed_messages(with_categories=True) %} 
+          <div class="alert alert-danger">
+              {{message}}
+          </div>
+        {% endfor %}        
+        
+        <form action="{{request.path}}" method="POST">
+            <label for ="name" >Name</label></br>
+            <input type="text" name="name" /></br>
+
+            <label for="salary">Salary</label></br>
+            <input type="number" name="salary"/></br>
+
+            <label for="age">Age</label></br>
+            <input type="number" name="age"/></br>
+            
+
+            <input type="submit" name="submit"/>
+        </form>
+    </body>
+</html>
